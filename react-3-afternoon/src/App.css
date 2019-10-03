@@ -11,7 +11,7 @@
   flex-direction: column;
   /* padding-left: 10vw; */
   justify-content: center;
-  font-size: calc(5px + 2vmin);
+  font-size: calc(5px + 1vmin);
   color: black;
 }
 
@@ -23,7 +23,7 @@
   display: flex;
   flex-direction: column;
   background-color: black;
-  min-height: 90vh;
+  min-height: 91.5vh;
   justify-content: center;
   align-items: center;
 }
@@ -39,13 +39,58 @@
 }
 
 .Name {
-  font-size: 30px;
+  font-size: 40px;
   font-weight: 700;
-  margin-bottom: 25px;
+  margin-bottom: 0px;
+  border-bottom: solid #0368f3;
+  border-width: medium;
+}
+
+.From {
+  font-size: 20px;
+  margin-bottom: 0px;
+  display: flex;
+  font-weight: bold;
+}
+
+.From-c {
+  font-weight: normal;
+  margin-left: 8px;
+}
+
+.Title {
+  font-size: 20px;
+  margin: 0px;
+  display: flex;
+  font-weight: bold;
+}
+
+.Title-c {
+  font-weight: normal;
+  margin-left: 8px;
+}
+
+.Employer {
+  font-size: 20px;
+  margin: 0px;
+  display: flex;
+  font-weight: bold;
+}
+
+.Employer-c {
+  font-weight: normal;
+  margin-left: 8px;
+}
+
+.Movies {
+  margin-top: 40px;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .Position {
   margin-right: 15px;
+  font-size: 20px;
   font-weight: 800;
 }
 
@@ -69,4 +114,22 @@
   display: flex;
   align-content: space-between;
   width: 800px;
+}
+
+button {
+  cursor: pointer;
+  background: black;
+  color: white;
+  border: black;
+  font-size: 20px;
+}
+
+.Middle {
+  cursor: pointer;
+  margin: 10px;
+  padding: 10px;
+  background: #0368f3;
+  border-radius: 15px;
+  font-size: 15px;
+  font-weight: 300;
 }

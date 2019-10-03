@@ -3,6 +3,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import Data from "./Components/data";
 import Counter from "./Components/data";
+import Movies from "./Components/Movies";
 
 class App extends Component {
   constructor(props) {
@@ -26,6 +27,12 @@ class App extends Component {
   }
 
   render() {
+    if (this.state.position < 1) {
+      this.state.position += 25;
+    }
+    if (this.state.position > 25) {
+      this.state.position -= 25;
+    }
     return (
       <div className="App">
         <header className="App-header">
@@ -37,28 +44,46 @@ class App extends Component {
                   {this.state.list[this.state.position - 1].name.first + " "}
                   {this.state.list[this.state.position - 1].name.last}
                 </p>
-                <p>
+                <p className="From">
                   From:
-                  {" " + this.state.list[this.state.position - 1].city + ", "}
-                  {this.state.list[this.state.position - 1].country}
+                  <div className="From-c">
+                    {" " + this.state.list[this.state.position - 1].city + ", "}
+                    {this.state.list[this.state.position - 1].country}
+                  </div>
                 </p>
-                <p>
+                <p className="Title">
                   Job Title:
-                  {" " + this.state.list[this.state.position - 1].title}
+                  <div className="Title-c">
+                    {" " + this.state.list[this.state.position - 1].title}
+                  </div>
                 </p>
-                <p>
+                <p className="Employer">
                   Employer:
-                  {" " + this.state.list[this.state.position - 1].employer}
+                  <div className="Employer-c">
+                    {" " + this.state.list[this.state.position - 1].employer}
+                  </div>
                 </p>
-                <p>favorite movies</p>
+                <p className="Movies">Favorite Movies:</p>
+                <p>
+                  <Movies
+                    favMovies={
+                      this.state.list[this.state.position - 1].favoriteMovies
+                    }
+                  />
+                </p>
               </div>
               <div className="Position">
                 <p>{this.state.position} / 25</p>
               </div>
             </div>
             <div className="Prev-Next">
-              <button onClick={this.handlePrevUser}> Previous </button>
-              <button onClick={this.handleNextUser}> Next </button>
+              <button onClick={this.handlePrevUser}> &lt; Previous </button>
+              <div>
+                <button className="Middle">Edit</button>
+                <button className="Middle">Delete</button>
+                <button className="Middle">New</button>
+              </div>
+              <button onClick={this.handleNextUser}> Next > </button>
             </div>
           </body>
         </header>
